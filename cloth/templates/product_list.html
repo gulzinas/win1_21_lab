@@ -1,0 +1,19 @@
+{% include 'base.html' %}
+<br><center><span<span class="badge" style="background-color:saddlebrown; color: white;"><h1>Список книг</h1></span></center><br><div class="flex" style="display: flex;
+    flex-wrap: wrap;    justify-content: space-between
+    align-items: center;    justify-content: center;
+    gap: 50px;">
+    {% for  product in object_list %}
+    <div class="card" style="width: calc(33.33% - 10px);
+    margin-bottom: 20px; ">
+        <div class="card-body">
+        <h3 style="font-size: 18px;    margin-top: 0;">{{product.name}}</h3>
+          <img src="{{product.image.url}}"  alt="{{ product.name }}" width="200">
+            <p><em>{{product.description}}</em></p>
+          <p>Стоимость: {{ product.cost}} сом </p>
+            <a href="#" class="btn btn-primary">Подробнее</a>
+      </div>
+   </div>    {% endfor %}
+</div>
+{% include 'footer.html' %}
+

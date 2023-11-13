@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Список всех тэгов</h2>
+    <ul>
+        {% for tag in tags %}
+            <li><a href="{% url 'tag_filtered_list' tag.id %}">{{ tag.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

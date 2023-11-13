@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Список одежды с тэгом "{{ tag.name }}"</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <p>Цена: ${{ product.price }}</p>
+                <a href="{% url 'create_order' %}">Добавить в заказ</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
